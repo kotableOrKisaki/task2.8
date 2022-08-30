@@ -9,8 +9,9 @@ namespace task8
             string password = "meow";
             string input;
             int tryCount = 0;
+            int maxTryCount = 3;
 
-            while (tryCount < 3)
+            while (tryCount < maxTryCount)
             {
                 Console.Write("Для доступа введите пароль:\t");
                 input = Console.ReadLine();
@@ -18,7 +19,7 @@ namespace task8
                 if (input == password)
                 {
                     Console.WriteLine("Доступ открыт, проходите!");
-                    break;
+                    tryCount = maxTryCount;
                 }
                 else
                 {
